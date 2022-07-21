@@ -1,4 +1,6 @@
-###### Works on - debian based distros(depends on dpkg)
+###### list_libraries - works for debian based distros(depends on dpkg)
+
+###### list_libraries_rpm - works redhat based distros(depends on rpm)
 
 ###### Requirements - python3, pip3, virtualenv
 
@@ -12,6 +14,16 @@ pip install -r requirements.txt
 
 ./list_libraries <path_to_binary> <path_to_xlsx_file>
 
+./list_libraries_rpm <path_to_binary> <path_to_xlsx_file>
+
 ##### Eg:
 
 ./list_libraries /usr/bin/vim ~/vim-lib.xlsx
+
+
+###### What list_libraries_rpm does?
+
+1. ldd <binary>
+2. rpm -qf <path_to_shared_object>
+3. rpm -qi <owner_file>
+4. List package name, version, license, url, summary and description in xlsx file
